@@ -11,7 +11,7 @@ def translate_form():
 @app.route('/', methods=['POST'])
 def translate_core():
 	srclang = request.form['csrc']
-	return render_template('translate.html', message=translate.translate(srclang), csrc=srclang)
+	return render_template('translate.html', etgt=translate.translate(srclang), csrc=srclang)
 
 # send everything from client as static content
 @app.route('/favicon.ico')
