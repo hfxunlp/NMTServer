@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, send_from_directory
 
 import translate
 
@@ -12,6 +12,12 @@ def translate_form():
 def translate_core():
 	srclang = request.form['csrc']
 	return render_template('translate.html', message=translate.translate(srclang), csrc=srclang)
+
+# send everything from client as static content
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(app.root_path,
+                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 if __name__ == '__main__':
 	translate.open()
