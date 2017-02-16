@@ -16,8 +16,7 @@ def translate_core():
 # send everything from client as static content
 @app.route('/favicon.ico')
 def favicon():
-    return send_from_directory(app.root_path,
-                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
+	return send_from_directory(app.root_path, 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 if __name__ == '__main__':
 	translate.open()
