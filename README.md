@@ -1,13 +1,15 @@
 # NMTServer
 An online NMT Server for OpenNMT
 
-You may need to change your translation server at https://github.com/anoidgit/NMTServer/blob/master/translate.py#L20 and reconfigure your service port in ini file if you use uwsgi.
+You may need to change your translation server address in [`translate.py`](https://github.com/anoidgit/NMTServer/blob/master/translate.py#L20) and reconfigure your service port in the `.ini` file if you use uwsgi.
 
 After all the configs were done, you could start your server with:
-uwsgi --ini huwsgi.ini
+`uwsgi --ini huwsgi.ini`
 or
-uwsgi --ini huwsgipy.ini
+`uwsgi --ini huwsgipy.ini`
 if you use pypy rather than python.
+
+If you do not want to use `uwsgi`, you could just use `python server.py` to start your server, which is ok with Windows.
 
 This is working for Chinese-English Translation, so there are some segmentation jobs in translate.py, you may need to change the translate.py to fit your use, I think it will be simple.
 
