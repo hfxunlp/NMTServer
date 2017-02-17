@@ -15,7 +15,7 @@ def ImDict(fname):
 			if tmp:
 				tmp=tmp.decode("utf-8")
 				if tmp:
-					nlpir.AddUserWord(tmp)
+					nlpir.AddUserWord(tmp.encode("utf-8"))
 
 def poweron():
 	nlpir.Init(nlpir.PACKAGE_DIR,nlpir.UTF8_CODE,None)
