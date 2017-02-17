@@ -10,3 +10,5 @@ uwsgi --ini huwsgipy.ini
 if you use pypy rather than python.
 
 This is working for Chinese-English Translation, so there are some segmentation jobs in translate.py, you may need to change the translate.py to fit your use, I think it will be simple.
+
+You could try the baseline model and get a view at http://ano.f3322.net:8888/, but It runs on my PC which was used to train the models at the same time, I can not make sure the server is available at any time.
