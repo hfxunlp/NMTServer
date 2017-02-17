@@ -22,7 +22,7 @@ def _translate(srctext):
 	#	for ffu in fu:
 	#		if "tgt" in ffu:
 	#			ffu["tgt"]=detoken.detoken(ffu["tgt"])
-		return detoken.detoken(full[0][0]["tgt"])
+		return detoken.detoken(full[0][0].get("tgt",""))
 	else:
 		return u"未开通断句功能，暂不开放长段翻译。"
 
