@@ -3,13 +3,16 @@
   <title>中英翻译(beta)</title>
 </head>
 <body>
+<p style="font-size:50px;color:blue;font-weight:bold;font-style:italic">PureNMT</p>
 <div align="center">
   <form action="/" method="post">
-    <legend style="font-size:30px;">请输入中文:</legend>
-    <p><textarea rows="5" cols="30" type="text" style="font-size:30px;" name="csrc">{{ csrc }}</textarea></p>
-    <p><button type="submit" style="font-size:30px;">翻译</button></p>
+    <legend style="font-size:30px">请输入中文:</legend>
+    <p><textarea rows="5" cols="35" type="text" style="font-size:30px" name="csrc">{{ csrc }}</textarea></p>
+    <p><button type="submit" style="font-size:30px">翻译</button></p>
   </form>
-  <p><textarea rows="5" cols="30" type="text" style="font-size:30px;">{{ etgt }}</textarea></p>
+  {% if etgt %}
+  <p><textarea rows="5" cols="35" type="text" style="font-size:30px">{{ etgt }}</textarea></p>
+  {% endif %}
 </div>
 </body>
 </html>
