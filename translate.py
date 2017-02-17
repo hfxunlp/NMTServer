@@ -33,8 +33,8 @@ def translate(srctext):
 	else:
 		return tmp
 
-def open():
-	seg.open()
+def poweron():
+	seg.poweron()
 
-def close():
-	seg.close()
+def poweroff():
+	seg.poweroff()

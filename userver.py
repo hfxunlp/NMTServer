@@ -18,4 +18,4 @@ def translate_core():
 def favicon():
 	return send_from_directory(app.root_path, 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
-translate.open()
+translate.poweron()

@@ -19,6 +19,6 @@ def favicon():
 	return send_from_directory(app.root_path, 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 if __name__ == '__main__':
-	translate.open()
-	app.run(port=8001, debug=False, host="127.0.0.1")
-	translate.close()
+	translate.poweron()
+	app.run(port=8888, debug=False, host="0.0.0.0")
+	translate.poweroff()
