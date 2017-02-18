@@ -8,23 +8,16 @@ import zmq, sys, json
 
 import seg
 import detoken
+import datautils
 
-def _translate_core(srctext,server):
+def _translate_core(jsond):
 	sock = zmq.Context().socket(zmq.REQ)
-	sock.connect(server)
-	sock.send(json.dumps([{"src": srctext}]))
+	sock.connect("tcp://127.0.0.1:5556")
+	sock.send(jsond)
 	return sock.recv()
 
 def _translate(srctext):
-	if len(srctext)<270:
-		full=json.loads(_translate_core(seg.segline(srctext),"tcp://127.0.0.1:5556"))
-	#for fu in full:
-	#	for ffu in fu:
-	#		if "tgt" in ffu:
-	#			ffu["tgt"]=detoken.detoken(ffu["tgt"])
-		return detoken.detoken(full[0][0].get("tgt",""))
-	else:
-		return u"未开通断句功能，暂不开放长段翻译。"
+	return detoken.detoken(datautils.restoreFromBatch(json.loads(_translate_core(json.dumps(datautils.makeBatch(datautils.cutParagraph(seg.segline(srctext))))))))
 
 def translate(srctext):
 	tmp=srctext.strip()
