@@ -4,7 +4,7 @@ import sys
 reload(sys)
 sys.setdefaultencoding( "utf-8" )
 
-splitcode=set([u"。",u"？",u"！",u"；"])
+splitcode=set([u"。", u"？", u"！", u"；", u"\n"])
 
 def cutParagraph(strin):
 	global splitcode
