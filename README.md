@@ -9,7 +9,7 @@ or
 `uwsgi --ini huwsgipy.ini`
 if you use pypy rather than python.
 
-If you do not want to use `uwsgi`, you could just use `python server.py` to start your server, which is ok with Windows, but you maybe need to change the server address and port in [`server.py`](https://github.com/anoidgit/NMTServer/blob/master/server.py#L23).
+If you do not want to use `uwsgi`, you could just use `python userver.py` to start your server, which is ok with Windows, but you maybe need to change the server address and port in [`userver.py`](https://github.com/anoidgit/NMTServer/blob/master/userver.py#L24).
 
 This is working for Chinese-English Translation, so there are some segmentation jobs in `translate.py`, you may need to change the `translate.py` to fit your use, I think it will be simple.
 
