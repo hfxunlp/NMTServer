@@ -6,6 +6,11 @@ sys.setdefaultencoding( "utf-8" )
 
 splitcode=set([u"。", u"？", u"！", u"；", u"\n"])
 
+import pinyin
+
+def char2pinyin(strin):
+	return pinyin.get(strin, format="strip")
+
 def cutParagraph(strin):
 	global splitcode
 	rs=[]

@@ -17,7 +17,7 @@ def _translate_core(jsond):
 	return sock.recv()
 
 def _translate(srctext):
-	return detoken.detoken(datautils.restoreFromBatch(json.loads(_translate_core(json.dumps(datautils.makeBatch(datautils.cutParagraph(seg.segline(srctext))))))))
+	return detoken.detoken(datautils.char2pinyin(datautils.restoreFromBatch(json.loads(_translate_core(json.dumps(datautils.makeBatch(datautils.cutParagraph(seg.segline(srctext)))))))))
 
 def translate(srctext):
 	tmp=srctext.strip()
