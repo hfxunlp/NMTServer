@@ -1,7 +1,7 @@
 from pynlpir import nlpir
 import os
 
-def segline(strin):
+def tokenone(strin):
 	try:
 		rs=nlpir.ParagraphProcess(strin.encode("utf-8","ignore"), 0)
 	except:
