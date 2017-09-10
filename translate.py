@@ -6,7 +6,7 @@ sys.setdefaultencoding( "utf-8" )
 
 import zmq, sys, json
 
-import seg
+import token as seg
 import detoken
 import datautils
 
