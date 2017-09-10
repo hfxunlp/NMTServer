@@ -6,7 +6,7 @@ sys.setdefaultencoding( "utf-8" )
 
 import zmq, sys, json
 
-import token as seg
+import token
 import detoken
 import datautils
 
@@ -17,7 +17,7 @@ def _translate_core(jsond):
 	return sock.recv()
 
 def _translate(srctext):
-	return detoken.detoken(datautils.char2pinyin(datautils.restoreFromBatch(json.loads(_translate_core(json.dumps(datautils.makeBatch(datautils.cutParagraph(seg.segline(srctext)))))))))
+	return detoken.detoken(datautils.char2pinyin(datautils.restoreFromBatch(json.loads(_translate_core(json.dumps(datautils.makeBatch(datautils.cutParagraph(token.tokenone(srctext)))))))))
 
 def translate(srctext):
 	tmp=srctext.strip()
@@ -27,7 +27,7 @@ def translate(srctext):
 		return tmp
 
 def poweron():
-	seg.poweron()
+	token.poweron()
 
 def poweroff():
-	seg.poweroff()
+	token.poweroff()
