@@ -8,4 +8,4 @@ This is working for Chinese-English Translation, so there are some tokenization 
 You could try the baseline model and get a sample view at http://ano.f3322.net:5678/, but It runs on my PC which was used to train the models at the same time, I can not make sure the server is available at any time. You could try to copy this("欢迎") in the top textbox and click the only button, if you are not familiar with Chinese. It looks like this:  
 ![STRUCTURE](<doc/images/welcome.png>)  
 ![STRUCTURE](<doc/images/example.png>)  
-But this is a very ugly and rough work, you'd better try this(https://github.com/OpenNMT/Server) after their works done.  
+But this is a very ugly and rough work, you'd better try this(https://github.com/OpenNMT/Server) after their works are done.  
